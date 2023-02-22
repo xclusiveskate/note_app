@@ -1,19 +1,17 @@
-import 'dart:convert';
-
 class MyNote {
   final int? id;
   final String title;
   final String content;
   final DateTime date;
   final String category;
-  final bool isCompleted;
+  final bool isSelected;
   MyNote({
     this.id,
     required this.title,
     required this.content,
     required this.date,
     required this.category,
-    required this.isCompleted,
+    required this.isSelected,
   });
 
   MyNote copyWith({
@@ -22,7 +20,7 @@ class MyNote {
     String? content,
     DateTime? date,
     String? category,
-    bool? isCompleted,
+    bool? isSelected,
   }) {
     return MyNote(
       id: id ?? this.id,
@@ -30,7 +28,7 @@ class MyNote {
       content: content ?? this.content,
       date: date ?? this.date,
       category: category ?? this.category,
-      isCompleted: isCompleted ?? this.isCompleted,
+      isSelected: isSelected ?? this.isSelected,
     );
   }
 
@@ -41,7 +39,7 @@ class MyNote {
       'content': content,
       'date': date.toIso8601String(),
       'category': category,
-      'isCompleted': isCompleted
+      'isSelected': isSelected
     };
   }
 
@@ -52,7 +50,7 @@ class MyNote {
       content: map['content'] as String,
       date: DateTime.parse(map['date']),
       category: map['category'] as String,
-      isCompleted: map['isCompleted'] == 1 ? true : false,
+      isSelected: map['isSelected'] == 1 ? true : false,
     );
   }
 }
