@@ -1,17 +1,17 @@
 class MyNote {
-  final int? id;
-  final String title;
-  final String content;
-  final DateTime date;
-  final String category;
-  final bool isSelected;
+  int? id;
+  String title;
+  String content;
+  DateTime date;
+  String category;
+  // bool isSelected;
   MyNote({
     this.id,
     required this.title,
     required this.content,
     required this.date,
     required this.category,
-    required this.isSelected,
+    // required this.isSelected,
   });
 
   MyNote copyWith({
@@ -20,7 +20,7 @@ class MyNote {
     String? content,
     DateTime? date,
     String? category,
-    bool? isSelected,
+    // bool? isSelected,
   }) {
     return MyNote(
       id: id ?? this.id,
@@ -28,7 +28,7 @@ class MyNote {
       content: content ?? this.content,
       date: date ?? this.date,
       category: category ?? this.category,
-      isSelected: isSelected ?? this.isSelected,
+      // isSelected: isSelected ?? this.isSelected,
     );
   }
 
@@ -39,7 +39,7 @@ class MyNote {
       'content': content,
       'date': date.toIso8601String(),
       'category': category,
-      'isSelected': isSelected
+      // 'isSelected': isSelected
     };
   }
 
@@ -50,9 +50,7 @@ class MyNote {
       content: map['content'] as String,
       date: DateTime.parse(map['date']),
       category: map['category'] as String,
-      isSelected: map['isSelected'] == 1 ? true : false,
+      // isSelected: map['isSelected'] == 1 ? true : false,
     );
   }
 }
-
-List<MyNote> noteContainer = [];

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:note_app/ui/category.dart';
+import 'package:note_app/ui/notes/home.dart';
 import 'package:overlay_support/overlay_support.dart';
 
 void main() {
@@ -16,10 +16,8 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
           title: 'Flutter Demo',
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            primarySwatch: Colors.amber,
-          ),
-          home: Text("Welcome")),
+          theme: ThemeData(primarySwatch: Colors.amber, useMaterial3: true),
+          home: const NotePage()),
     );
   }
 }
